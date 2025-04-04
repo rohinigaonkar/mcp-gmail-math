@@ -1,4 +1,4 @@
-# Math Agent with Keynote and Gmail Integration
+# Math Agent with Gmail Integration
 
 A powerful Python-based math agent that combines mathematical calculations with visual presentation in Keynote and email sharing capabilities. Built using Model Control Protocol (MCP) and Google's Gemini AI.
 
