@@ -1,0 +1,122 @@
+% python mcp_client.py
+Starting main execution...
+Establishing connection to FirstMCP server for Math...
+Establishing connection to Second MCP server for Email...
+Connections established, creating sessions...
+Sessions created, initializing...
+INFO:googleapiclient.discovery_cache:file_cache is only supported with oauth2client<4.0.0
+Requesting tool list...
+INFO:mcp.server.lowlevel.server:Processing request of type ListToolsRequest
+[04/03/25 21:36:09] INFO     Processing request of type ListToolsRequest                                          server.py:534
+Successfully retrieved 28 tools
+Creating system prompt...
+Number of tools: 28
+1. Calculator - add(a: integer, b: integer) - Add two numbers
+2. Calculator - add_list(l: array) - Add all numbers in a list
+3. Calculator - subtract(a: integer, b: integer) - Subtract two numbers
+4. Calculator - multiply(a: integer, b: integer) - Multiply two numbers
+5. Calculator - divide(a: integer, b: integer) - Divide two numbers
+6. Calculator - power(a: integer, b: integer) - Power of two numbers
+7. Calculator - sqrt(a: integer) - Square root of a number
+8. Calculator - cbrt(a: integer) - Cube root of a number
+9. Calculator - factorial(a: integer) - factorial of a number
+10. Calculator - log(a: integer) - log of a number
+11. Calculator - remainder(a: integer, b: integer) - remainder of two numbers divison
+12. Calculator - sin(a: integer) - sin of a number
+13. Calculator - cos(a: integer) - cos of a number
+14. Calculator - tan(a: integer) - tan of a number
+15. Calculator - mine(a: integer, b: integer) - special mining tool
+16. Calculator - create_thumbnail(image_path: string) - Create a thumbnail from an image
+17. Calculator - strings_to_chars_to_int(string: string) - Return the ASCII values of the characters in a word
+18. Calculator - int_list_to_exponential_sum(int_list: array) - Return sum of exponentials of numbers in a list
+19. Calculator - fibonacci_numbers(n: integer) - Return the first n Fibonacci Numbers
+20. Calculator - mac_open_keynote() - Open Keynote on macOS and create a new document.
+21. Calculator - mac_draw_rectangle() - Draw a rectangle in Keynote on macOS from (x1,y1) to (x2,y2).  Keynote must be open before calling this tool.
+22. Calculator - mac_add_text_in_keynote(text: string) - Add text in Keynote on macOS inside a rectangle shape. Keynote must be open and rectangle must be drawn before calling this tool.
+1. Gmail - send_email(recipient_id: string, subject: string, message: string) - Creates and sends an email message
+2. Gmail - get_unread_emails() - Retrieves unread messages from mailbox
+3. Gmail - read_email(email_id: string) - Retrieves email contents including to, from, subject, and contents
+4. Gmail - trash_email(email_id: string) - Moves email to trash given ID
+5. Gmail - mark_email_as_read(email_id: string) - Marks email as read given ID
+6. Gmail - open_email(email_id: string) - Opens email in browser given ID
+Successfully created tools description
+Created system prompt...
+Starting iteration loop...
+
+--- Iteration 1 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: Calculator|strings_to_chars_to_int|INDIA
+
+DEBUG: Raw function info:  Calculator|strings_to_chars_to_int|INDIA
+DEBUG: Split parts: ['Calculator', 'strings_to_chars_to_int', 'INDIA']
+DEBUG: Server type: Calculator
+DEBUG: Function name: strings_to_chars_to_int
+DEBUG: Raw parameters: ['INDIA']
+DEBUG: Found tool: strings_to_chars_to_int
+DEBUG: Tool schema: {'properties': {'string': {'title': 'String', 'type': 'string'}}, 'required': ['string'], 'title': 'strings_to_chars_to_intArguments', 'type': 'object'}
+DEBUG: Schema properties: {'string': {'title': 'String', 'type': 'string'}}
+DEBUG: Converting parameter string with value INDIA to type string
+DEBUG: Final arguments: {'string': 'INDIA'}
+DEBUG: Calling tool strings_to_chars_to_int
+                    INFO     Processing request of type CallToolRequest                                           server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='78', annotations=None), TextContent(type='text', text='68', annotations=None), TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='65', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['73', '78', '68', '73', '65']
+Iteration_result: ['73', '78', '68', '73', '65']
+
+--- Iteration 2 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: Calculator|int_list_to_exponential_sum|[73, 78, 68, 73, 65]
+
+DEBUG: Raw function info:  Calculator|int_list_to_exponential_sum|[73, 78, 68, 73, 65]
+DEBUG: Split parts: ['Calculator', 'int_list_to_exponential_sum', '[73, 78, 68, 73, 65]']
+DEBUG: Server type: Calculator
+DEBUG: Function name: int_list_to_exponential_sum
+DEBUG: Raw parameters: ['[73, 78, 68, 73, 65]']
+DEBUG: Found tool: int_list_to_exponential_sum
+DEBUG: Tool schema: {'properties': {'int_list': {'items': {}, 'title': 'Int List', 'type': 'array'}}, 'required': ['int_list'], 'title': 'int_list_to_exponential_sumArguments', 'type': 'object'}
+DEBUG: Schema properties: {'int_list': {'items': {}, 'title': 'Int List', 'type': 'array'}}
+DEBUG: Converting parameter int_list with value [73, 78, 68, 73, 65] to type array
+DEBUG: Final arguments: {'int_list': [73, 78, 68, 73, 65]}
+DEBUG: Calling tool int_list_to_exponential_sum
+[04/03/25 21:36:10] INFO     Processing request of type CallToolRequest                                           server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='7.59982224609308e+33', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['7.59982224609308e+33']
+Iteration_result: ['7.59982224609308e+33']
+
+--- Iteration 3 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: Gmail|send_email|redacted@gmail.com|Assignment 4 Test Email|7.59982224609308e+33
+
+DEBUG: Raw function info:  Gmail|send_email|redacted@gmail.com|Assignment 4 Test Email|7.59982224609308e+33
+DEBUG: Split parts: ['Gmail', 'send_email', 'redacted@gmail.com', 'Assignment 4 Test Email', '7.59982224609308e+33']
+DEBUG: Server type: Gmail
+DEBUG: Function name: send_email
+DEBUG: Raw parameters: ['redacted@gmail.com', 'Assignment 4 Test Email', '7.59982224609308e+33']
+DEBUG: Found tool: send_email
+DEBUG: Tool schema: {'properties': {'recipient_id': {'title': 'Recipient Id', 'type': 'string'}, 'subject': {'title': 'Subject', 'type': 'string'}, 'message': {'title': 'Message', 'type': 'string'}}, 'required': ['recipient_id', 'subject', 'message'], 'title': 'send_emailArguments', 'type': 'object'}
+DEBUG: Schema properties: {'recipient_id': {'title': 'Recipient Id', 'type': 'string'}, 'subject': {'title': 'Subject', 'type': 'string'}, 'message': {'title': 'Message', 'type': 'string'}}
+DEBUG: Converting parameter recipient_id with value redacted@gmail.com to type string
+DEBUG: Converting parameter subject with value Assignment 4 Test Email to type string
+DEBUG: Converting parameter message with value 7.59982224609308e+33 to type string
+DEBUG: Final arguments: {'recipient_id': 'redacted@gmail.com', 'subject': 'Assignment 4 Test Email', 'message': '7.59982224609308e+33'}
+DEBUG: Calling tool send_email
+INFO:mcp.server.lowlevel.server:Processing request of type CallToolRequest
+INFO:__main__:Message sent: 195fe70f9ff7377d
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"status": "success", "message_id": "195fe70f9ff7377d"}', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['{"status": "success", "message_id": "195fe70f9ff7377d"}']
+Iteration_result: ['{"status": "success", "message_id": "195fe70f9ff7377d"}']
+
+--- Iteration 4 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FINAL_ANSWER: [7.59982224609308e+33]
