@@ -1,4 +1,45 @@
-# Math Agent with Gmail Integration
+# 🧠 MCP Learning Project – Model Context Protocol Integration Demo
+
+This project is a hands-on exploration of the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) — an open protocol that allows LLM applications to seamlessly interact with external tools and data sources. The goal of this codebase is to demonstrate how to integrate a variety of tools, both modern and legacy, into an LLM workflow using MCP.
+
+## 🔧 What’s Inside
+
+The project showcases three types of tool integrations:
+
+- 🧮 Math Tools
+
+   Simple Python functions for basic mathematical operations.
+
+- 🎨 Native Drawing Tools (Non-API / Legacy Integration)
+
+   Leverages AppleScript to control native macOS applications like Keynote, enabling the LLM to draw or write on a slide. This demonstrates how MCP can bridge the gap between LLMs and non-API, native desktop tools.
+
+- 📧 API-Based Tools
+
+   Integration with tools like Gmail, showcasing how MCP handles modern API-based service interactions.
+
+## 💡 Purpose
+
+This project serves as a learning ground for:
+
+- Understanding MCP in action
+- Experimenting with tool integrations (both legacy and modern)
+
+- Exploring multi-client/multi-server setups with a shared LLM interface
+
+## 🌐 Multi-Server/Client Support
+
+The code also includes a demonstration of:
+
+- Running two MCP servers
+
+- Initiating two MCP clients
+
+- Using a single LLM to communicate across both clients and interact with their respective tools.
+
+This helps illustrate how MCP can be scaled and structured for distributed, modular architectures.
+
+## Math Agent with Gmail Integration
 
 A powerful Python-based math agent that combines mathematical calculations with visual presentation in Keynote and email sharing capabilities. Built using Model Control Protocol (MCP) and Google's Gemini AI.
 
