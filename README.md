@@ -2,7 +2,7 @@
 
 This project is a hands-on exploration of the [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) — an open protocol that allows LLM applications to seamlessly interact with external tools and data sources. The goal of this codebase is to demonstrate how to integrate a variety of tools, both modern and legacy, into an LLM workflow using MCP.
 
-## 🔧 What’s Inside
+## 🔧 What's Inside
 
 The project showcases three types of tool integrations:
 
@@ -48,17 +48,20 @@ A powerful Python-based math agent that combines mathematical calculations with 
 ## 🚀 Quick Start
 
 1. **Clone and Setup**
+
 ```bash
 git clone <your-repository-url>
-cd keynote-drawing-text
+cd mcp-gmail-math
 ```
 
 2. **Install Dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. **Configure Environment Variables**
+
    Create `.env` file with your API keys and email:
      ```
      GEMINI_API_KEY=your_api_key_here
@@ -66,25 +69,29 @@ pip install -r requirements.txt
      ```
 
 4. **Run the Agent**
+
 ```bash
-python mcp-client-test.py "Your math query here"
+python mcp_client.py "Your math query here"
 ```
 
 ## ✨ Features
 
 ### Mathematical Capabilities
+
 - Basic arithmetic operations (add, subtract, multiply, divide)
 - Advanced functions (factorial, logarithms, trigonometry)
 - ASCII value calculations and exponential operations
 - Custom mathematical sequences and patterns
 
 ### Visual Presentation
+
 - Automatic Keynote document creation
 - Shape drawing capabilities
 - Text placement and formatting
 - Dynamic slide management
 
 ### Communication
+
 - Email results via Gmail integration
 - Automated result sharing
 - Customizable email templates
@@ -101,9 +108,9 @@ python mcp-client-test.py "Your math query here"
 
 ```
 .
-├── mcp-client-test.py     # Main client orchestrator
-├── mcp-server.py          # Math operations server
-├── gmail_server_test.py   # Gmail integration
+├── mcp_client.py     # Main client orchestrator
+├── math_mcp_server.py         # Math mcp server
+├── gmail_mcp_server.py   # Gmail mcp server
 ├── requirements.txt       # Dependencies
 ├── credentials.json       # Gmail API credentials
 └── .env                   # Environment variables
@@ -112,12 +119,14 @@ python mcp-client-test.py "Your math query here"
 ## 🔧 API Setup
 
 ### Gemini API
+
 1. Create a Google Cloud project
 2. Enable Gemini API
 3. Create API key
 4. Add to `.env` file
 
 ### Gmail API Setup
+
 1. **Create a new Google Cloud project**
    - Go to [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project or select an existing one
@@ -154,19 +163,21 @@ python mcp-client-test.py "Your math query here"
 ## 💡 Example Usage
 
 ```bash
-python mcp-client-test.py "Find the ASCII values of characters in INDIA and then return sum of exponentials of those values"
+python mcp_client.py "Find the ASCII values of characters in INDIA and then return sum of exponentials of those values"
 ```
 
 If no query is provided, the script will use a default query mentioned in the above example.
 
 The client will:
-1. Automatically start the MCP server in the background
+
+1. Start the MCP server in the background
 2. Perform the requested mathematical operations
 3. Send results via email
 
 ## ⚙️ Available Tools
 
 ### Math Operations
+
 ```python
 # Basic
 add(x, y)           # Addition
@@ -183,6 +194,7 @@ strings_to_chars_to_int(s)  # ASCII conversion
 ```
 
 ### Keynote Tools
+
 ```python
 mac_open_keynote()          # Create new presentation
 mac_draw_rectangle()        # Add shape to slide
@@ -190,13 +202,21 @@ mac_add_text_in_keynote(t)  # Add text content
 ```
 
 ### Gmail Tools
+
 ```python
+# Email Management
 send_email(recipient, subject, message)  # Send results via email
+get_unread_emails()                      # Retrieve unread messages from mailbox
+read_email(email_id)                     # Get email contents including to, from, subject, and contents
+trash_email(email_id)                    # Move email to trash given ID
+mark_email_as_read(email_id)             # Mark email as read given ID
+open_email(email_id)                     # Open email in browser given ID
 ```
 
 ## 🛡️ Error Handling
 
 The system includes robust error handling for:
+
 - API authentication failures
 - Mathematical operation errors
 - Keynote integration issues
@@ -205,7 +225,10 @@ The system includes robust error handling for:
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! 
+
+Please:
+
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
