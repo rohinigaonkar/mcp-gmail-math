@@ -186,7 +186,7 @@ async def main():
 
                 Important:
                 - When a function returns multiple values, you need to process all of them.
-                - Only give FINAL_ANSWER when you have completed all necessary calculations AND send email to the recipient {email_id}, subject "Assignment 4 Test Email" and body is the calculatedfinal answer text.
+                - Only give FINAL_ANSWER when you have completed all necessary calculations AND send email to the recipient {email_id}, with appropriate subject based on the query and body is the calculatedfinal answer text.
                 - Do not repeat function calls with the same parameters.
                 - Do not add parentheses to the function name.
                 - DO NOT include any explanations or additional text.
