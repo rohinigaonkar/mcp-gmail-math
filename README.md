@@ -39,6 +39,8 @@ The code also includes a demonstration of:
 
 This helps illustrate how MCP can be scaled and structured for distributed, modular architectures.
 
+![LLMs with Multiple Servers and Clients](./Architecture.jpeg)
+
 ## Math Agent with Gmail Integration
 
 A powerful Python-based math agent that combines mathematical calculations with visual presentation in Keynote and email sharing capabilities. Built using Model Control Protocol (MCP) and Google's Gemini AI.
